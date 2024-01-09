@@ -3,13 +3,13 @@
 #' @family packages
 #' @description Compile all Stan models in a directory, usually in a package.
 #' @details If building a package using `instantiate`, all Stan model files
-#'   must live in a folder called `inst/stan/` in the package source
+#'   must live in a folder called `src/stan/` in the package source
 #'   directory.
 #' @return `NULL` (invisibly). Called for its side effects.
 #' @inheritParams stan_cmdstan_path
 #' @param models Character vector of file paths to Stan model source code
-#'   files. Defaults to the Stan files in `./inst/stan/`
-#'   because all the Stan model files must live in the `inst/stan/` folder
+#'   files. Defaults to the Stan files in `./src/stan/`
+#'   because all the Stan model files must live in the `src/stan/` folder
 #'   for an R package built with `instantiate`.
 #' @param verbose Logical of length 1, whether to set the
 #'   `cmdstanr_verbose` global option to print more compiler messages
@@ -28,14 +28,9 @@
 #'   to model control compilation.
 #' @param force_recompile Argument to `cmdstanr::cmdstan_model()`
 #'   to model control compilation.
-#' @param compile_model_methods Argument to `cmdstanr::cmdstan_model()`
-#'   to model control compilation.
-#' @param compile_hessian_method Argument to `cmdstanr::cmdstan_model()`
-#'   to model control compilation.
-#' @param compile_standalone Argument to `cmdstanr::cmdstan_model()`
-#'   to model control compilation.
 #' @param threads Argument to `cmdstanr::cmdstan_model()`
 #'   to model control compilation.
+#' @param ... Other named arguments to `cmdstanr::cmdstan_model()`.
 #' @examples
 #' if (identical(Sys.getenv("INSTANTIATE_EXAMPLES"), "true")) {
 #' path <- tempfile()
@@ -48,7 +43,7 @@
 #' }
 stan_package_compile <- function(
   models = instantiate::stan_package_model_files(),
-  cmdstan_install = Sys.getenv("CMDSTAN_INSTALL"),
+  cmdstan_install = Sys.getenv("CMDSTAN_INSTALL", unset = ""),
   verbose = TRUE,
   quiet = FALSE,
   pedantic = FALSE,
@@ -57,10 +52,8 @@ stan_package_compile <- function(
   cpp_options = list(),
   stanc_options = list(),
   force_recompile = getOption("cmdstanr_force_recompile", default = FALSE),
-  compile_model_methods = FALSE,
-  compile_hessian_method = FALSE,
-  compile_standalone = FALSE,
-  threads = FALSE
+  threads = FALSE,
+  ...
 ) {
   stan_assert_cmdstanr()
   # Not possible to test in automated tests in one coverage run.
@@ -86,10 +79,10 @@ stan_package_compile <- function(
   }
   path_old <- cmdstanr_path()
   if (cmdstan_valid(path_old)) {
-    on.exit(suppressMessages(cmdstanr::set_cmdstan_path(path = path_old)))
+    on.exit(suppressMessages(cmdstanr("set_cmdstan_path")(path = path_old)))
   }
   path_new <- stan_cmdstan_path(cmdstan_install = cmdstan_install)
-  suppressMessages(cmdstanr::set_cmdstan_path(path = path_new))
+  suppressMessages(cmdstanr("set_cmdstan_path")(path = path_new))
   lapply(
     X = models,
     FUN = stan_compile_model,
@@ -101,10 +94,8 @@ stan_package_compile <- function(
     cpp_options = cpp_options,
     stanc_options = stanc_options,
     force_recompile = force_recompile,
-    compile_model_methods = compile_model_methods,
-    compile_hessian_method = compile_hessian_method,
-    compile_standalone = compile_standalone,
-    threads = threads
+    threads = threads,
+    ...
   )
   invisible()
 }
@@ -119,17 +110,15 @@ stan_compile_model <- function(
   cpp_options,
   stanc_options,
   force_recompile,
-  compile_model_methods,
-  compile_hessian_method,
-  compile_standalone,
-  threads
+  threads,
+  ...
 ) {
   if (verbose) {
     old <- getOption("cmdstanr_verbose")
     on.exit(options("cmdstanr_verbose" = old))
     options("cmdstanr_verbose" = TRUE)
   }
-  cmdstanr::cmdstan_model(
+  cmdstanr("cmdstan_model")(
     stan_file = model,
     compile = TRUE,
     quiet = quiet,
@@ -139,10 +128,8 @@ stan_compile_model <- function(
     cpp_options = cpp_options,
     stanc_options = stanc_options,
     force_recompile = force_recompile,
-    compile_model_methods = compile_model_methods,
-    compile_hessian_method = compile_hessian_method,
-    compile_standalone = compile_standalone,
-    threads = threads
+    threads = threads,
+    ...
   )
   invisible()
 }

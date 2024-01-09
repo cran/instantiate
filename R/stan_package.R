@@ -11,16 +11,12 @@
 #'   the executables live inside the file systems of their
 #'   respective packages, and users have the full power
 #'   and convenience of [`CmdStanR`](https://mc-stan.org/cmdstanr/)
-#'   without any additional compilation. This approach saves time,
-#'   allows R package developers to migrate from
-#'   [`rstan`](https://mc-stan.org/rstan/)
-#'   to the more modern [`CmdStanR`](https://mc-stan.org/cmdstanr/),
-#'   and fits well with centrally maintained R installations
-#'   where users may have trouble installing their own packages,
-#'   diagnosing compilation errors, and setting environment variables.
+#'   without any additional compilation after package installation.
+#'   This approach saves time and helps R package developers
+#'   migrate from [`rstan`](https://mc-stan.org/rstan/)
+#'   to the more modern [`CmdStanR`](https://mc-stan.org/cmdstanr/).
 #' @useDynLib instantiate, .registration = TRUE
 #' @importFrom fs dir_copy
-#' @importFrom pkglite unpack
 #' @importFrom rlang abort check_installed inform is_installed warn
 #' @importFrom utils capture.output globalVariables install.packages
 NULL

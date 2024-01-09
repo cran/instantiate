@@ -7,21 +7,22 @@
 #'   package uses. If CmdStan is not found, then the return value depends
 #'   on the `error_on_NA` argument.
 #' @inheritParams stan_cmdstan_path
-#' @inheritParams cmdstanr::cmdstan_version
+#' @param error_on_NA Logical of length 1, whether an error should be thrown
+#'   if CmdStan is not found.
 #' @examples
 #' if (stan_cmdstan_exists()) {
 #'   message(stan_cmdstan_version())
 #' }
 stan_cmdstan_version <- function(
-  cmdstan_install = Sys.getenv("CMDSTAN_INSTALL"),
+  cmdstan_install = Sys.getenv("CMDSTAN_INSTALL", unset = ""),
   error_on_NA = TRUE
 ) {
   stan_assert_cmdstanr()
   path_old <- cmdstanr_path()
   if (cmdstan_valid(path_old)) {
-    on.exit(suppressMessages(cmdstanr::set_cmdstan_path(path = path_old)))
+    on.exit(suppressMessages(cmdstanr("set_cmdstan_path")(path = path_old)))
   }
   path_new <- stan_cmdstan_path(cmdstan_install = cmdstan_install)
-  suppressMessages(cmdstanr::set_cmdstan_path(path = path_new))
-  cmdstanr::cmdstan_version(error_on_NA = error_on_NA)
+  suppressMessages(cmdstanr("set_cmdstan_path")(path = path_new))
+  cmdstanr("cmdstan_version")(error_on_NA = error_on_NA)
 }

@@ -23,19 +23,26 @@ stan_package_create <- function(path = tempfile()) {
     !file.exists(path),
     message = "path must be a valid file path that does not already exist."
   )
-  packed <- system.file(
-    "example.txt",
-    package = "instantiate",
-    mustWork = TRUE
+  source <- system.file("example", package = "instantiate", mustWork = TRUE)
+  fs::dir_copy(path = source, new_path = path, overwrite = TRUE)
+  file.rename(
+    from = file.path(path, "gitignore"),
+    to = file.path(path, ".gitignore")
   )
-  temp <- tempfile()
-  on.exit(unlink(x = temp, recursive = TRUE))
-  pkglite::unpack(
-    input = packed,
-    output = temp,
-    install = FALSE,
-    quiet = TRUE
+  file.rename(
+    from = file.path(path, "rbuildignore"),
+    to = file.path(path, ".Rbuildignore")
   )
-  file.rename(from = file.path(temp, "example"), to = path)
+  file.rename(
+    from = file.path(path, "github"),
+    to = file.path(path, ".github")
+  )
+  message(
+    paste0(
+      "Package with an internal Stan model created at directory path \"",
+      path,
+      "\". Configure with stan_package_configure() before installing."
+    )
+  )
   invisible()
 }

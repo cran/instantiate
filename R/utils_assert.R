@@ -23,6 +23,29 @@ stan_assert <- function(
   invisible()
 }
 
+stan_assert_install <- function(install) {
+  message <- paste(
+    "The CMDSTAN_INSTALL environment variable and the cmdstan_install",
+    "argument must be \"implicit\", \"fixed\", \"\", or unset",
+    "both when {instantiate} is installed and when {instantiate} is used.",
+    "If you are using {instantiate} and you get this error even though",
+    "CMDSTAN_INSTALL is an allowable value, please reinstall {instantiate}",
+    "with an allowable value of CMDSTAN_INSTALL."
+  )
+  stan_assert(
+    install,
+    is.character(.),
+    !anyNA(.),
+    length(.) == 1L,
+    message = message
+  )
+  stan_assert(
+    install %in% c("implicit", "fixed", ""),
+    message = message
+  )
+  invisible()
+}
+
 stan_deprecate <- function(name, date, version, alternative) {
   message <- sprintf(
     "%s was deprecated on %s (instantiate version %s). Alternative: %s.",
@@ -92,7 +115,7 @@ stan_assert_cmdstanr <- function() {
     rlang::check_installed(
       pkg = "cmdstanr",
       reason = paste(
-        "The {cmdstanr} package is needed to install",
+        "The {cmdstanr} package is required in order to install",
         "CmdStan and run Stan models. Please install it manually using",
         "install.packages(pkgs = \"cmdstanr\",",
         "repos = c(\"https://mc-stan.org/r-packages/\", getOption(\"repos\"))"
