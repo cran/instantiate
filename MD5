@@ -1,14 +1,14 @@
-6b436f30d1503fe3f4bf5a01cc0a7acc *DESCRIPTION
+a8b2ee1b71d55e3baf740798962ddf5d *DESCRIPTION
 251996587bac8db01533ad7011f0c4f5 *LICENSE
-500edf9a014381847bf9312201ba9bbb *NAMESPACE
-6ac387c4e85d9cc5f9088f1d61d69660 *NEWS.md
+bd9fd53ea4db1db82dc9608914ecf63e *NAMESPACE
+4db49db829c3c75c3d5243e94fa6e7ce *NEWS.md
 2bef7698ac8415315bc135a49e578fd7 *R/stan_cmdstan_exists.R
 fbbc28ba2a7f1db7e2cbfdd60ded45ea *R/stan_cmdstan_path.R
 41567ca03c5d51725a8df8671a85df29 *R/stan_cmdstan_version.R
-f1089690180d58f2274a2c019b7eefde *R/stan_package.R
+e1d9578869b1865488b143d5c3aa0bc2 *R/stan_package.R
 5e5c02177f5a1f2dbddda85f123e2bd5 *R/stan_package_clean.R
 fea8c1c0b7a797b3cefb80464f6c3eed *R/stan_package_compile.R
-5fb7e19eb46ea6eccad90776e9062d35 *R/stan_package_configure.R
+f871241ef51cd7a6c263abe471017fdc *R/stan_package_configure.R
 5910f1ddb7d6b74b26f5d053fd49b7ab *R/stan_package_create.R
 5a18040af8f27b9d1863d4b06ec872a0 *R/stan_package_model.R
 2d07bee7c202862603b17c252f572b9e *R/stan_package_model_files.R
@@ -23,7 +23,7 @@ c9e3f54962da09c419801231e6d93af6 *configure
 2f9b7e68130c000bb936834add088476 *inst/WORDLIST
 4f52065b21254d58b115bd70fdacee30 *inst/configuration/cleanup
 e2e64968e7947d94a4ab5c5effe6e918 *inst/configuration/cleanup.win
-9919e70bfb6fb150ab345f949e40fcaa *inst/configuration/install.libs.R
+1fb99680b570e9089a8d95a3376bd434 *inst/configuration/install.libs.R
 ad95a0ead03f3750c14185d1208ea057 *inst/example/DESCRIPTION
 637acb3d8af3a4f654eaccfdeb0bbba1 *inst/example/NAMESPACE
 b30634283cd20ed38b6245815bb00dd1 *inst/example/NOTICE
@@ -35,7 +35,7 @@ efcd2d3a39a16be5c2796bac59ed06ba *inst/example/man/example-package.Rd
 93cd10609b8ddf6d25b150b746970730 *inst/example/man/run_bernoulli_model.Rd
 f13db28d34167ce65e17c6c733508fe4 *inst/example/rbuildignore
 582f942393b9f2ed2560e1a24541fa7b *inst/example/src/stan/bernoulli.stan
-867227809d4b31babcb17c9c70bf7e14 *man/instantiate-package.Rd
+ec6ad4967c8b67750a5a10621c3b0fcb *man/instantiate-package.Rd
 64ebab7d5f327033219e9ade16493fff *man/stan_cmdstan_exists.Rd
 b5fbdd1a1c893ac907b542dc9b7735b6 *man/stan_cmdstan_path.Rd
 d17ec289db35821bdbf72eae7c692df4 *man/stan_cmdstan_version.Rd

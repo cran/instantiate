@@ -11,7 +11,7 @@ Description: Similar to 'rstantools' for 'rstan',
   migrate from 'rstan' to the more modern 'cmdstanr'.
   Packages 'rstantools', 'cmdstanr', 'stannis', and
   'stanapi' are similar Stan clients with different objectives.
-Version: 0.2.0
+Version: 0.2.1
 License: MIT + file LICENSE
 URL: https://wlandau.github.io/instantiate/,
         https://github.com/wlandau/instantiate
@@ -29,18 +29,18 @@ Authors@R: c(
     role = c("cph", "fnd")
   ))
 Depends: R (>= 4.0.0)
-Imports: fs, rlang, utils
+Imports: callr, fs, rlang, utils
 Suggests: knitr (>= 1.30), markdown (>= 1.1), rmarkdown (>= 2.4),
         testthat (>= 3.0.0), withr
 Encoding: UTF-8
 Language: en-US
 Config/testthat/edition: 3
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 NeedsCompilation: yes
-Packaged: 2024-01-09 15:40:24 UTC; C240390
+Packaged: 2024-02-06 20:53:49 UTC; C240390
 Author: William Michael Landau [aut, cre]
     (<https://orcid.org/0000-0003-1878-3253>),
   Eli Lilly and Company [cph, fnd]
 Maintainer: William Michael Landau <will.landau.oss@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-01-09 22:33:21 UTC
+Date/Publication: 2024-02-06 21:10:02 UTC
