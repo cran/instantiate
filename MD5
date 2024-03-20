@@ -1,13 +1,13 @@
-a8b2ee1b71d55e3baf740798962ddf5d *DESCRIPTION
+3d417dbf04a0d746989a93cc232bee40 *DESCRIPTION
 251996587bac8db01533ad7011f0c4f5 *LICENSE
 bd9fd53ea4db1db82dc9608914ecf63e *NAMESPACE
-4db49db829c3c75c3d5243e94fa6e7ce *NEWS.md
+5857e002ac05f48eccdd6c514e32fde2 *NEWS.md
 2bef7698ac8415315bc135a49e578fd7 *R/stan_cmdstan_exists.R
 fbbc28ba2a7f1db7e2cbfdd60ded45ea *R/stan_cmdstan_path.R
 41567ca03c5d51725a8df8671a85df29 *R/stan_cmdstan_version.R
 e1d9578869b1865488b143d5c3aa0bc2 *R/stan_package.R
 5e5c02177f5a1f2dbddda85f123e2bd5 *R/stan_package_clean.R
-fea8c1c0b7a797b3cefb80464f6c3eed *R/stan_package_compile.R
+29b29aa83988156a408ac0a7344aeed8 *R/stan_package_compile.R
 f871241ef51cd7a6c263abe471017fdc *R/stan_package_configure.R
 5910f1ddb7d6b74b26f5d053fd49b7ab *R/stan_package_create.R
 5a18040af8f27b9d1863d4b06ec872a0 *R/stan_package_model.R

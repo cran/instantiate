@@ -1,3 +1,7 @@
+# instantiate 0.2.2
+
+* Allow downstream packages to install even if `CmdStanR` is not installed (#20, @xinxinc476).
+
 # instantiate 0.2.1
 
 * Address CRAN warnings in generated packages about non-portable compilation flags (#19, @xinxinc476).
