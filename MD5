@@ -1,7 +1,7 @@
-3d417dbf04a0d746989a93cc232bee40 *DESCRIPTION
+2e7afa86af921b3937dcf12c8431b992 *DESCRIPTION
 251996587bac8db01533ad7011f0c4f5 *LICENSE
 bd9fd53ea4db1db82dc9608914ecf63e *NAMESPACE
-5857e002ac05f48eccdd6c514e32fde2 *NEWS.md
+317e02123d9b69ed785fabd6ca283009 *NEWS.md
 2bef7698ac8415315bc135a49e578fd7 *R/stan_cmdstan_exists.R
 fbbc28ba2a7f1db7e2cbfdd60ded45ea *R/stan_cmdstan_path.R
 41567ca03c5d51725a8df8671a85df29 *R/stan_cmdstan_version.R
@@ -10,7 +10,7 @@ e1d9578869b1865488b143d5c3aa0bc2 *R/stan_package.R
 29b29aa83988156a408ac0a7344aeed8 *R/stan_package_compile.R
 f871241ef51cd7a6c263abe471017fdc *R/stan_package_configure.R
 5910f1ddb7d6b74b26f5d053fd49b7ab *R/stan_package_create.R
-5a18040af8f27b9d1863d4b06ec872a0 *R/stan_package_model.R
+5048adc67199c821377af5359ab43e1f *R/stan_package_model.R
 2d07bee7c202862603b17c252f572b9e *R/stan_package_model_files.R
 8febf351efa09a0ee3afe6ea49e7a333 *R/utils_assert.R
 ddfbc90c3af7635bf90b25c40afeee27 *R/utils_cmdstan.R
@@ -23,7 +23,7 @@ c9e3f54962da09c419801231e6d93af6 *configure
 2f9b7e68130c000bb936834add088476 *inst/WORDLIST
 4f52065b21254d58b115bd70fdacee30 *inst/configuration/cleanup
 e2e64968e7947d94a4ab5c5effe6e918 *inst/configuration/cleanup.win
-1fb99680b570e9089a8d95a3376bd434 *inst/configuration/install.libs.R
+82322b691ac1e3b8a6145e196da3be3c *inst/configuration/install.libs.R
 ad95a0ead03f3750c14185d1208ea057 *inst/example/DESCRIPTION
 637acb3d8af3a4f654eaccfdeb0bbba1 *inst/example/NAMESPACE
 b30634283cd20ed38b6245815bb00dd1 *inst/example/NOTICE
@@ -43,7 +43,7 @@ b1243306a1c7269d40b05c257227a557 *man/stan_package_clean.Rd
 87f91bf4e5d07e9f231b0027f11f7f25 *man/stan_package_compile.Rd
 0273f94d2a8975867359904b12a0b562 *man/stan_package_configure.Rd
 b0b3186edbae1cc801617efbe9f7b858 *man/stan_package_create.Rd
-e7f2f88909d7f80ca3c5bc7ecaf535d0 *man/stan_package_model.Rd
+b98f2cef1d986cc95774247bbd15a351 *man/stan_package_model.Rd
 66b0cb46e7696b855970ebd064d7753a *man/stan_package_model_files.Rd
 a4ecab67eaecbb32368f00694cca54d7 *src/Makevars
 2c33369fea43469f1c5fefe8717024a7 *src/Makevars.win
